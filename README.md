@@ -72,10 +72,18 @@ Remotion entrega `yuvj420p` con `color_range=pc` (rango completo). **Safari lava
 colores.** Es la misma lección que ya costó un rediseño en `/studio` (CLAUDE.md §11):
 
 ```bash
-ffmpeg -y -i entrada.mp4 -c:v libx264 -crf 20 -preset slow -pix_fmt yuv420p \
+ffmpeg -y -i entrada.mp4 -vf "scale=in_range=pc:out_range=tv" \
+  -c:v libx264 -crf 20 -preset slow -pix_fmt yuv420p \
   -x264opts "colorprim=bt709:transfer=bt709:colormatrix=bt709" \
   -movflags +faststart -an salida.mp4
 ```
+
+> ⚠️ **El `-vf scale` no se puede omitir.** Es lo que **convierte** el rango; los
+> `-x264opts` solo lo **etiquetan**, y `-pix_fmt yuv420p` por su cuenta tampoco basta.
+> Con el tageo solo, el archivo sale `yuvj420p,pc` con etiqueta `bt709` —o sea,
+> mintiendo sobre su propio rango— y Safari lo lava igual. Pasó de verdad en la primera
+> tanda de cuatro conceptos, y lo agarró la comprobación de `render-tanda.sh`: por eso
+> esa comprobación existe y por eso imprime el resultado de `ffprobe` de cada archivo.
 
 Se comprueba con:
 
