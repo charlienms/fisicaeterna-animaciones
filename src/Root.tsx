@@ -7,6 +7,9 @@ import { Paralaje, propsParalaje } from './set/Paralaje';
 import { Aliasing, propsAliasing } from './set/Aliasing';
 import { Resonancia, propsResonancia } from './set/Resonancia';
 import { Fourier, propsFourier } from './set/Fourier';
+import { Doppler, propsDoppler } from './set/Doppler';
+import { Trilateracion, propsTrilateracion } from './set/Trilateracion';
+import { Aislamiento, propsAislamiento } from './set/Aislamiento';
 
 /**
  * Registro de composiciones: lo que aparece en el Studio y lo que lee el render.
@@ -150,6 +153,88 @@ export const RemotionRoot: React.FC = () => {
           etiquetaSuma: 'The sum',
           etiquetaGibbs: 'Gibbs phenomenon: it never shrinks, only narrows',
           notaAlPie: 'Fourier series of a square wave. FísicaEterna, CC BY 4.0',
+        }}
+      />
+
+      {/* ── C06 · Ciencia — efecto Doppler ── */}
+      <Composition
+        id="C06-Doppler"
+        component={Doppler}
+        durationInFrames={framesDeSegundos(14)}
+        {...base}
+        defaultProps={propsDoppler}
+      />
+      <Composition
+        id="C06-Doppler-EN"
+        component={Doppler}
+        durationInFrames={framesDeSegundos(14)}
+        {...base}
+        defaultProps={{
+          ...propsDoppler,
+          titulo: 'The siren never changed. Your position did',
+          etiquetaEmitida: 'What it emits',
+          etiquetaAdelante: 'Coming towards you',
+          etiquetaAtras: 'Going away',
+          rotuloFuente: 'Race car · 324 km/h',
+          notaAlPie: "f' = f · c / (c ∓ v). FísicaEterna, CC BY 4.0",
+        }}
+      />
+
+      {/* ── C07 · Tecnología — trilateración (GPS) ── */}
+      <Composition
+        id="C07-Trilateracion"
+        component={Trilateracion}
+        durationInFrames={framesDeSegundos(18)}
+        {...base}
+        defaultProps={propsTrilateracion}
+      />
+      <Composition
+        id="C07-Trilateracion-EN"
+        component={Trilateracion}
+        durationInFrames={framesDeSegundos(18)}
+        {...base}
+        defaultProps={{
+          ...propsTrilateracion,
+          titulo: 'Three distances and they know where you are',
+          pasos: [
+            'With one satellite: you are somewhere on this circle',
+            'With two: two candidates left',
+            'With three: only one is left',
+            'If your clock runs late, the three circles stop meeting',
+          ] as [string, string, string, string],
+          etiquetaSatelite: 'Satellite',
+          etiquetaTu: 'You',
+          etiquetaCandidato: 'Candidate',
+          etiquetaError: 'Clock error',
+          notaAlPie:
+            'A 2D sketch of a 3D problem: in space they are spheres. FísicaEterna, CC BY 4.0',
+        }}
+      />
+
+      {/* ── C08 · Tu casa — aislamiento sísmico ── */}
+      <Composition
+        id="C08-Aislamiento"
+        component={Aislamiento}
+        durationInFrames={framesDeSegundos(16)}
+        {...base}
+        defaultProps={propsAislamiento}
+      />
+      <Composition
+        id="C08-Aislamiento-EN"
+        component={Aislamiento}
+        durationInFrames={framesDeSegundos(16)}
+        {...base}
+        defaultProps={{
+          ...propsAislamiento,
+          titulo: 'The same earthquake, two identical buildings',
+          rotuloEmpotrado: 'Fixed to the ground',
+          rotuloAislado: 'On base isolators',
+          etiquetaPeriodo: 'Natural period',
+          etiquetaAmplifica: 'Moves the top',
+          etiquetaSuelo: 'The ground moves like this',
+          etiquetaAislador: 'This is doing the work',
+          notaAlPie:
+            'Transmissibility of a base-excited oscillator. FísicaEterna, CC BY 4.0',
         }}
       />
     </>
