@@ -1,17 +1,33 @@
 # animaciones — las piezas de `/conceptos`
 
 Proyecto de **Remotion** que genera las animaciones de la sección
-[`/conceptos`](https://www.fisicaeterna.cl/conceptos). Es un proyecto **aparte** del
-sitio: su propio `package.json`, su propio `tsconfig.json` y sus propias dependencias.
+[`/conceptos`](https://www.fisicaeterna.cl/conceptos) de FísicaEterna. Cada concepto
+publicado enlaza desde su página al archivo de acá que lo produce.
 
-> ⚠️ Está **excluido del `tsconfig.json` del sitio** a propósito. En Vercel solo se
-> instalan las dependencias de la raíz, así que `animaciones/node_modules` no existe
-> ahí: sin esa exclusión, el `tsc -b` del sitio no encontraría `remotion` y **el
-> despliegue fallaría**, aunque en local pase.
+**Todo esto es CC BY 4.0** (ver [`LICENSE`](LICENSE)): puedes descargar una animación y
+usarla en tu clase, cambiarle el texto, traducirla o partir de este código para hacer
+otra. Lo único que pedimos es el crédito.
 
-El código está acá y no en un repositorio privado porque **se publica**: cada concepto
-enlaza a su archivo fuente, y eso es justamente lo que convierte la sección en un aporte
-y no en un portafolio (ROADMAP §3).
+## Por qué este repositorio existe por separado
+
+El sitio de FísicaEterna es un repositorio **privado** —lleva el panel de administración,
+el cableado de la base de datos y los datos de una tesis en curso—, así que el código de
+las animaciones no podía publicarse sin abrir todo lo demás.
+
+Y publicarlo no es un extra: **es una regla de entrada de la sección**. Un concepto sin
+su código fuente a la vista no se publica (ROADMAP §3). Eso es lo que la convierte en un
+aporte y no en un portafolio.
+
+> ⚠️ **Este es el único lugar donde vive este código.** No hay una copia en el
+> repositorio del sitio: dos copias se desincronizan, y el día que eso pase el enlace
+> «Ver código fuente» de la página estaría mostrando algo distinto de lo que generó el
+> video que la persona acaba de ver.
+>
+> Para trabajar con los dos a la vez, este repositorio se clona **dentro** de la carpeta
+> del sitio, en `animaciones/`. El sitio lo ignora (`.gitignore`) y lo excluye de su
+> `tsconfig.json`: en Vercel solo se instalan las dependencias de la raíz, así que
+> `animaciones/node_modules` no existe ahí y sin esa exclusión **el despliegue
+> fallaría**, aunque en local pase.
 
 ## Los dos comandos que se usan a diario
 

@@ -1,0 +1,41 @@
+Animaciones de FísicaEterna
+Copyright (c) FísicaEterna (https://www.fisicaeterna.cl)
+
+Este repositorio —el código de las animaciones y los videos que produce— se
+publica bajo la licencia
+
+    Creative Commons Atribución 4.0 Internacional (CC BY 4.0)
+
+Texto legal completo:  https://creativecommons.org/licenses/by/4.0/legalcode.es
+Resumen legible:       https://creativecommons.org/licenses/by/4.0/deed.es
+
+
+QUÉ PUEDES HACER
+
+Copiar, modificar y redistribuir este material, en cualquier medio y formato,
+incluso con fines comerciales. No hace falta pedir permiso ni avisar.
+
+Eso incluye lo que más nos interesa que pase: usar una animación en una clase,
+en un video, en un curso o en un artículo; cambiarle el texto; traducirla a otro
+idioma; o partir de este código para hacer una animación distinta.
+
+
+QUÉ TIENES QUE HACER A CAMBIO
+
+Dar crédito. Basta con una línea:
+
+    <nombre del concepto> — FísicaEterna (fisicaeterna.cl), CC BY 4.0
+
+Si modificaste el material, indícalo. No hace falta detallar qué cambiaste.
+
+No puedes aplicar restricciones legales ni medidas tecnológicas que le impidan a
+otra persona hacer lo que esta licencia permite.
+
+
+LO QUE NO CUBRE ESTA LICENCIA
+
+El nombre y la marca «FísicaEterna». Puedes citarnos como fuente —de hecho
+tienes que hacerlo— pero eso no autoriza a presentar un trabajo derivado como si
+fuera nuestro ni a usar la marca para respaldar otro proyecto.
+
+Las tipografías, que tienen sus propias licencias (ver src/fuentes.ts).
