@@ -10,6 +10,7 @@ import { Fourier, propsFourier } from './set/Fourier';
 import { Doppler, propsDoppler } from './set/Doppler';
 import { Trilateracion, propsTrilateracion } from './set/Trilateracion';
 import { Aislamiento, propsAislamiento } from './set/Aislamiento';
+import { Ecografia, propsEcografia } from './set/Ecografia';
 
 /**
  * Registro de composiciones: lo que aparece en el Studio y lo que lee el render.
@@ -235,6 +236,38 @@ export const RemotionRoot: React.FC = () => {
           etiquetaAislador: 'This is doing the work',
           notaAlPie:
             'Transmissibility of a base-excited oscillator. FísicaEterna, CC BY 4.0',
+        }}
+      />
+
+      {/* ── C09 · Tu cuerpo — ecografía ── */}
+      <Composition
+        id="C09-Ecografia"
+        component={Ecografia}
+        durationInFrames={framesDeSegundos(18)}
+        {...base}
+        defaultProps={propsEcografia}
+      />
+      <Composition
+        id="C09-Ecografia-EN"
+        component={Ecografia}
+        durationInFrames={framesDeSegundos(18)}
+        {...base}
+        defaultProps={{
+          ...propsEcografia,
+          titulo: 'A machine that only knows how to time echoes',
+          etiquetasFronteras: ['Fat', 'Wall of the womb', 'The baby'] as [string, string, string],
+          etiquetaTransductor: 'Probe',
+          etiquetaEcos: 'The only thing that comes back',
+          ejeProfundidad: 'Depth',
+          ejeTiempo: 'Time since the pulse',
+          etiquetaReconstruido: 'What the machine works out',
+          pasos: [
+            'A pulse of sound goes in and travels down',
+            'At each boundary part of it bounces, and the rest keeps going',
+            'From the arrival times it solves for the depths',
+          ] as [string, string, string],
+          notaAlPie:
+            'A-mode (one line). The hospital image sweeps hundreds. It assumes 1540 m/s everywhere, exactly as the real machine does. FísicaEterna, CC BY 4.0',
         }}
       />
     </>
